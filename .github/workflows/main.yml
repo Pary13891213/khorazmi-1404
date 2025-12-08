@@ -27,6 +27,9 @@ jobs:
           pip install --upgrade pip
           pip install buildozer cython==0.29.36
 
+      - name: Clean previous Buildozer platforms
+        run: rm -rf .buildozer/android/platform
+
       - name: Install Android SDK, Build Tools, and NDK
         run: |
           mkdir -p $ANDROIDSDK/cmdline-tools
