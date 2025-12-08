@@ -1,0 +1,20 @@
+
+<SplashScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.011, 0.114, 0.267, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        WaveWidget:
+            size_hint: None , None
+            size: 640 , 360
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        PersianLabel:
+            persian_text : " سپند "
+            font_name: "Sade"
+            font_size : '72sp'
+            color: 1, 1, 1, 1
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
