@@ -1,5 +1,8 @@
-[app]
+[buildozer]
+log_level = 2
+warn_on_root = 0
 
+[app]
 title = Khorazmi 1404
 package.name = khorazmi_1404
 package.domain = org.khorazmi
@@ -25,12 +28,7 @@ android.permissions = INTERNET
 # مخفی‌سازی نوار دکمه‌ها
 fullscreen = 0
 
-#
-[buildozer]
-log_level = 2
-warn_on_root = 0
-
-[app]
+# تنظیمات اندروید
 android.api = 33
 android.minapi = 21
 android.sdk = 33
