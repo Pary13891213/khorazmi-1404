@@ -29,11 +29,20 @@ jobs:
           unzip -q commandlinetools-linux-9477386_latest.zip -d $ANDROIDSDK/cmdline-tools
           mv $ANDROIDSDK/cmdline-tools/cmdline-tools $ANDROIDSDK/cmdline-tools/latest
 
-          # قبول تمام لایسنس‌ها
           yes | $ANDROIDSDK/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROIDSDK --licenses
+          $ANDROIDSDK/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROIDSDK \
+            "build-tools;36.1.0" \
+            "platforms;android-33" \
+            "platform-tools"
+            
+      - name: Force Android NDK r25b
+        run: |
+          export ANDROIDSDK=$HOME/android-sdk
+          $ANDROIDSDK/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROIDSDK "ndk;25.2.9519653"
 
-          # نصب Build-Tools 36.1، Android 33 و Platform-Tools
-          $ANDROIDSDK/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROIDSDK "build-tools;36.1.0" "platforms;android-33" "platform-tools"
+          echo "ANDROID_NDK_HOME=$ANDROIDSDK/ndk/25.2.9519653" >> $GITHUB_ENV
+          echo "ANDROID_NDK_ROOT=$ANDROIDSDK/ndk/25.2.9519653" >> $GITHUB_ENV
+          echo "ANDROID_NDK=$ANDROIDSDK/ndk/25.2.9519653" >> $GITHUB_ENV
 
       - name: Build APK
         run: |
