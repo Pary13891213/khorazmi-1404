@@ -17,7 +17,7 @@ entrypoint = main.py
 icon.filename = %(source.dir)s/images/Neon.png
 
 # کتابخانه‌های پایتون
-requirements = python3,kivy,datetime,arabic_reshaper,bidi,json,os,string
+requirements = python3,kivy,arabic_reshaper,python-bidi
 
 # اسکرین جهت اجرای اپ
 orientation = portrait
